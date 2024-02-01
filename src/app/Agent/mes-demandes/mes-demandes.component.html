@@ -1,0 +1,62 @@
+<!-- FILEPATH: /C:/Firas/2eme DSI/Stage Perfectionnement/front-end/src/app/Agent/mes-demandes/mes-demandes.component.html -->
+<div class="container">
+    <h1>Liste des demandes</h1>
+
+    <div *ngIf="demandes.length === 0">
+        <p>Aucune demandes pour le moment.</p>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="form-check">
+                <input [(ngModel)]="enCoursChecked" class="form-check-input" type="checkbox" id="enCours" name="enCours"
+                    value="enCours">
+                <label class="form-check-label" for="enCours">En cours</label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-check">
+                <input [(ngModel)]="aRectifierChecked" class="form-check-input" type="checkbox" id="aRectifier"
+                    name="aRectifier" value="aRectifier">
+                <label class="form-check-label" for="aRectifier">A rectifier</label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-check">
+                <input [(ngModel)]="publieChecked" class="form-check-input" type="checkbox" id="publier" name="publier"
+                    value="publier">
+                <label class="form-check-label" for="publier">Publier</label>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-check">
+                <input [(ngModel)]="autreChecked" class="form-check-input" type="checkbox" id="autre" name="autre"
+                    value="autre">
+                <label class="form-check-label" for="autre">Autre</label>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover" *ngIf="demandes.length > 0">
+        <thead class="table-info">
+            <tr>
+                <th>Numéro</th>
+                <th>Objet</th>
+                <th>Type</th>
+                <th>Statut</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let demande of demandes">
+                <tr role="button" (click)="navigateToDemande(demande.id_demande!)"
+                    *ngIf="(demande.statut?.id_statut==1||demande.statut?.id_statut==2) && enCoursChecked || (demande.statut?.id_statut==3|| demande.statut?.id_statut==4) && aRectifierChecked|| demande.statut?.id_statut==5 && publieChecked|| demande.statut?.id_statut==6 && autreChecked">
+                    <td>{{ demande.num_demande }}</td>
+                    <td>{{ demande.objet }}</td>
+                    <td>{{ demande.type_demande }}</td>
+                    <td>{{ demande.statut?.label }}</td>
+
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

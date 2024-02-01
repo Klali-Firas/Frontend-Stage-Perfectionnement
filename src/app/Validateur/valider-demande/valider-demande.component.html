@@ -1,0 +1,185 @@
+<div class=" d-flex align-items-center justify-content-center w-100 v-100">
+    <div class="row w-100 justify-content-center">
+        <div class="col-md-10 col-sm-12">
+            <form [formGroup]="demandeForm" *ngIf="demandeForm" (ngSubmit)="AccepterDemande()">
+                <div class="row gx-2 p-2 justify-content-between border rounded">
+                    <div class="col-md-3 col-12">
+                        <div class="form-group">
+                            <label for="date_demande">Date demande</label>
+                            <input type="date" class="form-control" id="date_demande" formControlName="date_demande"
+                                required
+                                [ngClass]="{'is-invalid': demandeForm.controls['date_demande'].invalid && demandeForm.controls['date_demande'].touched,
+                                                            'is-valid': demandeForm.controls['date_demande'].valid && demandeForm.controls['date_demande'].touched}">
+                            <div *ngIf="demandeForm.controls['date_demande'].invalid && demandeForm.controls['date_demande'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid date.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="nomPrenom">Par : </label>
+                        <p>{{user.nom+" "+user.prenom}}</p>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="service">Commune : </label>
+                        <p>{{user.commune.nom}}</p>
+
+                    </div>
+                </div>
+                <div class="row gx-2 p-2 justify-content-between border rounded mt-3">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="annee_demande">Annee demande</label>
+                            <input type="number" class="form-control" id="annee_demande" formControlName="annee_demande"
+                                required
+                                [ngClass]="{'is-invalid': demandeForm.controls['annee_demande'].invalid && demandeForm.controls['annee_demande'].touched,
+                                                            'is-valid': demandeForm.controls['annee_demande'].valid && demandeForm.controls['annee_demande'].touched}">
+                            <div *ngIf="demandeForm.controls['annee_demande'].invalid && demandeForm.controls['annee_demande'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid year.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="objet">Objet</label>
+                            <input type="text" class="form-control" id="objet" formControlName="objet" required
+                                [ngClass]="{'is-invalid': demandeForm.controls['objet'].invalid && demandeForm.controls['objet'].touched,
+                                                                                'is-valid': demandeForm.controls['objet'].valid && demandeForm.controls['objet'].touched}">
+                            <div *ngIf="demandeForm.controls['objet'].invalid && demandeForm.controls['objet'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid object.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="type_demande">Type demande</label>
+                            <input type="text" class="form-control" id="type_demande" formControlName="type_demande"
+                                required
+                                [ngClass]="{'is-invalid': demandeForm.controls['type_demande'].invalid && demandeForm.controls['type_demande'].touched,
+                                                            'is-valid': demandeForm.controls['type_demande'].valid && demandeForm.controls['type_demande'].touched}">
+                            <div *ngIf="demandeForm.controls['type_demande'].invalid && demandeForm.controls['type_demande'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid type.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="nature_demande">Nature demande</label>
+                            <input type="text" class="form-control" id="nature_demande" formControlName="nature_demande"
+                                required
+                                [ngClass]="{'is-invalid': demandeForm.controls['nature_demande'].invalid && demandeForm.controls['nature_demande'].touched,
+                                                                                'is-valid': demandeForm.controls['nature_demande'].valid && demandeForm.controls['nature_demande'].touched}">
+                            <div *ngIf="demandeForm.controls['nature_demande'].invalid && demandeForm.controls['nature_demande'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid nature.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="signature">Signature</label>
+                            <input type="text" class="form-control" id="signature" formControlName="signature" required
+                                [ngClass]="{'is-invalid': demandeForm.controls['signature'].invalid && demandeForm.controls['signature'].touched,
+                                                                                'is-valid': demandeForm.controls['signature'].valid && demandeForm.controls['signature'].touched}">
+                            <div *ngIf="demandeForm.controls['signature'].invalid && demandeForm.controls['signature'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid signature.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="date_signature">Date signature</label>
+                            <input type="date" class="form-control" id="date_signature" formControlName="date_signature"
+                                required
+                                [ngClass]="{'is-invalid': demandeForm.controls['date_signature'].invalid && demandeForm.controls['date_signature'].touched,
+                                                                                'is-valid': demandeForm.controls['date_signature'].valid && demandeForm.controls['date_signature'].touched}">
+                            <div *ngIf="demandeForm.controls['date_signature'].invalid && demandeForm.controls['date_signature'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid date.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="date_deliberation">Date délibération</label>
+                            <input type="date" class="form-control" id="date_deliberation"
+                                formControlName="date_deliberation" required
+                                [ngClass]="{'is-invalid': demandeForm.controls['date_deliberation'].invalid && demandeForm.controls['date_deliberation'].touched,
+                                                            'is-valid': demandeForm.controls['date_deliberation'].valid && demandeForm.controls['date_deliberation'].touched}">
+                            <div *ngIf="demandeForm.controls['date_deliberation'].invalid && demandeForm.controls['date_deliberation'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid date.
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="num_demande">Num demande</label>
+                            <input type="number" class="form-control" id="num_demande" formControlName="num_demande"
+                                required
+                                [ngClass]="{'is-invalid': demandeForm.controls['num_demande'].invalid && demandeForm.controls['num_demande'].touched,
+                                                                                                'is-valid': demandeForm.controls['num_demande'].valid && demandeForm.controls['num_demande'].touched}">
+                            <div *ngIf="demandeForm.controls['num_demande'].invalid && demandeForm.controls['num_demande'].touched"
+                                class="invalid-feedback">
+                                Please enter a valid number.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="row gx-2 p-2 justify-content-between border rounded mt-3">
+                    <div class="form-group">
+                        <label for="text">Text</label>
+                        <textarea class="form-control" id="textfield" formControlName="text" required maxlength="4000"
+                            rows="5"
+                            [ngClass]="{'is-invalid': demandeForm.controls['text'].invalid && demandeForm.controls['text'].touched,
+                                                                            'is-valid': demandeForm.controls['text'].valid && demandeForm.controls['text'].touched}"></textarea>
+                        <div *ngIf="demandeForm.controls['text'].invalid && demandeForm.controls['text'].touched"
+                            class="invalid-feedback">
+                            Please enter a valid text.
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around mt-3 mx-2">
+                    <button type="submit" class="btn btn-primary">Accepter</button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                        data-bs-target="#rectifierModal">A
+                        rectifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="rectifierModal" tabindex="-1" aria-labelledby="rectifierModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="rectifierModalLabel">Rectifier demande</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="remarque">Remarque</label>
+                    <textarea class="form-control" id="remarque" rows="3" maxlength="255" #R></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                    (click)="ARectifierDemande(R.value)">Rectifier</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>

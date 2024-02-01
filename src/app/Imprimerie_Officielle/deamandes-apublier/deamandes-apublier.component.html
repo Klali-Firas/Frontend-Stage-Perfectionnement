@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <thead class="table table-warning">
+        <tr>
+            <th>Date Demande</th>
+            <th>Objet</th>
+            <th>Statut</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="demandes.length === 0">
+            <td colspan="3">Aucune demande à publier</td>
+        </tr>
+        <ng-container *ngFor="let demande of demandes">
+            <tr role="button" (click)="navigateToDemande(demande.id_demande!)" *ngIf="(demande.statut?.id_statut==2) ">
+
+                <td>{{ demande.date_demande | date }}</td>
+                <td>{{ demande.objet }}</td>
+                <td>{{ demande.statut?.label }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

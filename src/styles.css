@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "ngx-toastr/toastr";
+.row {
+  margin: 0;
+}
+input:disabled {
+  background-color: #f5f5f5 !important;
+}
+textarea:disabled {
+  background-color: #f5f5f5 !important;
+}
+.row.border {
+  background-color: rgb(252, 255, 255);
+}

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand">{{nomPrenom}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+
+            <a class="nav-item nav-link">{{commune}}</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+                        (click)="navigateToAccueil()" role="button">Créer Demande</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+                        (click)="navigateToMesDemandes()" role="button">Mes
+                        Demandes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"
+                        (click)="seDeconneter()" role="button">Déconnecter</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
