@@ -74,7 +74,7 @@ export class PublierDemandeComponent implements OnInit {
     this.demandeService.updateDemande(this.id, { demande: this.demande, validateur: this.user.id! }).subscribe({
       next: data => {
         console.log(data);
-        this.toaster.success("Demande accepter avec succes");
+        this.toaster.success("Demande publier avec succes");
         this.router.navigate(['/imprimerie_officielle']);
       },
       error: (err) => {

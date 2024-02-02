@@ -1,7 +1,7 @@
 <div class="d-flex align-items-center justify-content-center w-100 v-100 mb-5">
     <div class="row w-100 justify-content-center">
         <div class="col-md-10 col-sm-12">
-            <form [formGroup]="demandeForm" *ngIf="demandeForm" (ngSubmit)="AccepterDemande()">
+            <form [formGroup]="demandeForm" *ngIf="demandeForm">
                 <div class="row gx-2 p-2 justify-content-between border rounded w-100 mt-3">
                     <div class="col-md-4 col-sm-5 col-12">
                         <div>
@@ -68,17 +68,17 @@
                     </div>
                 </div>
 
-                <div class="d-flex justify-content-around mt-3 mx-2">
-                    <button type="submit" class="btn btn-primary">Publier</button>
+                <div class="d-flex justify-content-around mt-3 mx-2"><button type="button" class="btn btn-primary"
+                        data-bs-toggle="modal" data-bs-target="#publierModal">Publier</button>
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#rectifierModal">A
-                        rectifier</button>
+                        data-bs-target="#rectifierModal">A rectifier</button>
+
                 </div>
             </form>
         </div>
     </div>
 </div>
-<!-- Bootstrap Modal -->
+<!-- Rectifier Modal -->
 <div class="modal fade" id="rectifierModal" tabindex="-1" aria-labelledby="rectifierModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -95,6 +95,25 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
                     (click)="ARectifierDemande(R.value)">Rectifier</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Publier Modal -->
+<div class="modal fade" id="publierModal" tabindex="-1" aria-labelledby="publierModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="publierModalLabel">Publier demande</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Êtes-vous sûr de vouloir publier cette demande ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)="AccepterDemande()">Publier</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
             </div>
         </div>
