@@ -1,0 +1,26 @@
+<!-- FILEPATH: /C:/Firas/2eme DSI/Stage Perfectionnement/front-end/src/app/Imprimerie_Officielle/trace-demande/trace-demande.component.html -->
+
+<div class="container">
+    <h1>Trace Demande</h1>
+
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date Mise à Jour</th>
+                        <th>Remarque</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let trace of trace_demande">
+                        <td>{{ trace.date_mise_a_jour |date:"MMM,dd yyyy HH:mm"}}</td>
+                        <td>{{ trace.remarque }}</td>
+                        <td>{{ trace.statut }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

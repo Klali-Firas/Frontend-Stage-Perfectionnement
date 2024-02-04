@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Demande } from '../Interfaces/demande';
 import { Observable } from 'rxjs';
+import { TraceDemande } from '../Interfaces/trace-demande';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,8 @@ export class DemandeService {
 
   getAllDemandes(): Observable<Demande[]> {
     return this.http.get<Demande[]>(this.apiUrl);
+  }
+  getTraceDemande(id: number): Observable<TraceDemande[]> {
+    return this.http.get<TraceDemande[]>("http://localhost:4332/api/trace/" + id);
   }
 }

@@ -24,5 +24,8 @@ export class NavImpComponent implements OnInit {
   navigateToAcceuil() {
     this.router.navigate(["/imprimerie_officielle"]);
   }
+  navigateToListeDemandes() {
+    this.router.navigate(["/imprimerie_officielle/demandes"]);
+  }
 
 }

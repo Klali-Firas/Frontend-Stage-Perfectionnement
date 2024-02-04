@@ -6,11 +6,11 @@ import { Utilisateur } from 'src/app/Interfaces/utilisateur';
 import { DemandeService } from 'src/app/Services/demande.service';
 
 @Component({
-  selector: 'app-deamandes-apublier',
-  templateUrl: './deamandes-apublier.component.html',
-  styleUrls: ['./deamandes-apublier.component.css']
+  selector: 'app-liste-tous-demandes',
+  templateUrl: './liste-tous-demandes.component.html',
+  styleUrls: ['./liste-tous-demandes.component.css']
 })
-export class DeamandesAPublierComponent implements OnInit {
+export class ListeTousDemandesComponent implements OnInit {
   user: Utilisateur = JSON.parse(localStorage.getItem('user')!);
   demandes: Demande[] = [];
 
@@ -33,6 +33,6 @@ export class DeamandesAPublierComponent implements OnInit {
   }
 
   navigateToDemande(id: number) {
-    this.router.navigate(['/imprimerie_officielle/publier_demande/', id]);
+    this.router.navigate(['/imprimerie_officielle/trace_demande/', id]);
   }
 }

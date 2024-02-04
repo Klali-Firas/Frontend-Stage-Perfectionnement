@@ -22,6 +22,8 @@ import { ShellImpComponent } from './Imprimerie_Officielle/shell-imp/shell-imp.c
 import { NavImpComponent } from './Imprimerie_Officielle/nav-imp/nav-imp.component';
 import { DeamandesAPublierComponent } from './Imprimerie_Officielle/deamandes-apublier/deamandes-apublier.component';
 import { PublierDemandeComponent } from './Imprimerie_Officielle/publier-demande/publier-demande.component';
+import { ListeTousDemandesComponent } from './Imprimerie_Officielle/liste-tous-demandes/liste-tous-demandes.component';
+import { TraceDemandeComponent } from './Imprimerie_Officielle/trace-demande/trace-demande.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { PublierDemandeComponent } from './Imprimerie_Officielle/publier-demande
     ShellImpComponent,
     NavImpComponent,
     DeamandesAPublierComponent,
-    PublierDemandeComponent
+    PublierDemandeComponent,
+    ListeTousDemandesComponent,
+    TraceDemandeComponent
   ],
   imports: [
     BrowserModule,
