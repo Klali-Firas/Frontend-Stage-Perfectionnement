@@ -24,6 +24,7 @@ import { DeamandesAPublierComponent } from './Imprimerie_Officielle/deamandes-ap
 import { PublierDemandeComponent } from './Imprimerie_Officielle/publier-demande/publier-demande.component';
 import { ListeTousDemandesComponent } from './Imprimerie_Officielle/liste-tous-demandes/liste-tous-demandes.component';
 import { TraceDemandeComponent } from './Imprimerie_Officielle/trace-demande/trace-demande.component';
+import { ShellLoginComponent } from './Login/shell-login/shell-login.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { TraceDemandeComponent } from './Imprimerie_Officielle/trace-demande/tra
     DeamandesAPublierComponent,
     PublierDemandeComponent,
     ListeTousDemandesComponent,
-    TraceDemandeComponent
+    TraceDemandeComponent,
+    ShellLoginComponent
   ],
   imports: [
     BrowserModule,

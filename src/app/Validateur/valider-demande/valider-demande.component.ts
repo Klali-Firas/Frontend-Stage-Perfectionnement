@@ -25,7 +25,7 @@ export class ValiderDemandeComponent implements OnInit {
       this.id = params['id'];
       await this.getDemandeById();
       this.demandeForm = this.formBuilder.group({
-        date_demande: [formatDate(this.demande.date_demande, 'yyyy-MM-dd', 'en'), [Validators.required]],
+        date_demande: [{ value: formatDate(this.demande.date_demande, 'yyyy-MM-dd', 'en'), disabled: true }, [Validators.required]],
         annee_demande: [this.demande.annee_demande, [Validators.required]],
         type_demande: [this.demande.type_demande, [Validators.required]],
         num_demande: [this.demande.num_demande, [Validators.required]],
@@ -56,6 +56,7 @@ export class ValiderDemandeComponent implements OnInit {
       this.toaster.error("Veuillez saisir tous les champs");
       return;
     }
+    this.demandeForm.enable();
     this.demande.text = this.demandeForm.value.text;
     this.demande.statut!.id_statut = 2;
     this.demande.objet = this.demandeForm.value.objet;
@@ -88,6 +89,7 @@ export class ValiderDemandeComponent implements OnInit {
       this.toaster.error("Veuillez saisir une remarque");
       return;
     }
+    this.demandeForm.enable();
     this.demande.text = this.demandeForm.value.text;
     this.demande.statut!.id_statut = 3;
     this.demande.objet = this.demandeForm.value.objet;

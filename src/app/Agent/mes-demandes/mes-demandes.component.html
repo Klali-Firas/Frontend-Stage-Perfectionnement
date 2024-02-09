@@ -1,6 +1,6 @@
 <!-- FILEPATH: /C:/Firas/2eme DSI/Stage Perfectionnement/front-end/src/app/Agent/mes-demandes/mes-demandes.component.html -->
 <div class="container">
-    <h1>Liste des demandes</h1>
+    <h1>Mes demandes</h1>
 
     <div *ngIf="demandes.length === 0">
         <p>Aucune demandes pour le moment.</p>
@@ -36,8 +36,8 @@
         </div>
     </div>
 
-    <table class="table table-hover" *ngIf="demandes.length > 0">
-        <thead class="table-info">
+    <table class="table table-hover table-bordered rounded" *ngIf="demandes.length > 0">
+        <thead class="table-light sticky-top top-0">
             <tr>
                 <th>Numéro</th>
                 <th>Objet</th>

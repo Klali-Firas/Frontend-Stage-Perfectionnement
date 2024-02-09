@@ -1,0 +1,6 @@
+.bg-login {
+  background-image: url("src/assets/images/bg-login.png");
+  background-size: cover;
+  /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+}

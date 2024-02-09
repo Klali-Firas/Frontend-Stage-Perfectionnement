@@ -12,3 +12,17 @@ textarea:disabled {
 .row.border {
   background-color: rgb(252, 255, 255);
 }
+.table {
+  --bs-table-hover-bg: rgba(0, 255, 0, 0.1);
+}
+.table > tr > th {
+  text-align: center !important;
+  vertical-align: middle;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+h1 {
+  font-weight: 800;
+}
