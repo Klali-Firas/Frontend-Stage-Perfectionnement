@@ -5,7 +5,7 @@ export interface Demande {
     date_demande: Date;
     annee_demande: number;
     type_demande: string;
-    num_demande: number;
+    // num_demande: number;
     statut?: Statut;
     date_saisie?: Date;
     objet: string;

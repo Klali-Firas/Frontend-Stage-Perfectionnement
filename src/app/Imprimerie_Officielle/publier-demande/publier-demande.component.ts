@@ -33,7 +33,7 @@ export class PublierDemandeComponent implements OnInit {
       date_demande: [formatDate(this.demande.date_demande, 'yyyy-MM-dd', 'en'), [Validators.required]],
       annee_demande: [this.demande.annee_demande, [Validators.required]],
       type_demande: [this.demande.type_demande, [Validators.required]],
-      num_demande: [this.demande.num_demande, [Validators.required]],
+      // num_demande: [this.demande.num_demande, [Validators.required]],
       objet: [this.demande.objet, [Validators.required]],
       date_deliberation: [formatDate(this.demande.date_deliberation, 'yyyy-MM-dd', 'en'), [Validators.required]],
       nature_demande: [this.demande.nature_demande, [Validators.required]],

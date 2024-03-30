@@ -50,7 +50,7 @@
             <ng-container *ngFor="let demande of demandes">
                 <tr role="button" (click)="navigateToDemande(demande.id_demande!)"
                     *ngIf="(demande.statut?.id_statut==1||demande.statut?.id_statut==2) && enCoursChecked || (demande.statut?.id_statut==3|| demande.statut?.id_statut==4) && aRectifierChecked|| demande.statut?.id_statut==5 && publieChecked|| demande.statut?.id_statut==6 && autreChecked">
-                    <td>{{ demande.num_demande }}</td>
+                    <td>{{ demande.id_demande }}</td>
                     <td>{{ demande.objet }}</td>
                     <td>{{ demande.type_demande }}</td>
                     <td>{{ demande.statut?.label }}</td>

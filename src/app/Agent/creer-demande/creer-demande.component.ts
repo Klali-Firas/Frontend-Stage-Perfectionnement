@@ -25,7 +25,7 @@ export class CreerDemandeComponent implements OnInit {
       date_demande: [{ value: formatDate(new Date(), "yyyy-MM-dd", "en"), disabled: true }, [Validators.required]],
       annee_demande: ['', [Validators.required]],
       type_demande: ['', [Validators.required]],
-      num_demande: ['', [Validators.required]],
+      // num_demande: ['', [Validators.required]],
       objet: ['', [Validators.required]],
       date_deliberation: ['', [Validators.required]],
       nature_demande: ['', [Validators.required]],
