@@ -55,13 +55,17 @@
                     <div class="col-md-5">
                         <div class="form-group">
                             <label for="type_demande">Type demande</label>
-                            <input type="text" class="form-control" id="type_demande" formControlName="type_demande"
-                                required
+                            <select class="form-control" id="type_demande" formControlName="type_demande" required
                                 [ngClass]="{'is-invalid': demandeForm.controls['type_demande'].invalid && demandeForm.controls['type_demande'].touched,
                                     'is-valid': demandeForm.controls['type_demande'].valid && demandeForm.controls['type_demande'].touched}">
+                                <option value="">Selectionner un type</option>
+                                <option value="رأي">رأي</option>
+                                <option value="قرار">قرار</option>
+                                <option value="مداولات">مداولات</option>
+                            </select>
                             <div *ngIf="demandeForm.controls['type_demande'].invalid && demandeForm.controls['type_demande'].touched"
                                 class="invalid-feedback">
-                                Please enter a valid type.
+                                Please select a valid type.
                             </div>
                         </div>
                     </div>
